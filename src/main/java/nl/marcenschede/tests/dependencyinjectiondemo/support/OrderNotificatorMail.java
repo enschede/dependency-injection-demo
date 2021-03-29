@@ -5,16 +5,11 @@ import org.springframework.stereotype.Component;
 import nl.marcenschede.tests.dependencyinjectiondemo.ordermanagement.OrderNotificator;
 
 @Component
-public class OrderNotificatorMail implements OrderNotificator {
+public class OrderNotificatorMail
+        implements OrderNotificator {
 
     @Override
     public void sendCancelNotification(Order order) {
-
+        // Do something
     }
-
-    @Override
-    public void sendCannotCancelNotification(Order order) {
-
-    }
-
 }

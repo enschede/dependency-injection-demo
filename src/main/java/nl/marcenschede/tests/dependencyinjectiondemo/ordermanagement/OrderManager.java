@@ -1,12 +1,10 @@
 package nl.marcenschede.tests.dependencyinjectiondemo.ordermanagement;
 
-import lombok.extern.slf4j.Slf4j;
-import nl.marcenschede.tests.dependencyinjectiondemo.domain.OrderStatus;
 import nl.marcenschede.tests.dependencyinjectiondemo.domain.Order;
+import nl.marcenschede.tests.dependencyinjectiondemo.domain.OrderStatus;
 import org.springframework.stereotype.Component;
 
 @Component
-@Slf4j
 public class OrderManager {
 
     private final OrderNotificator notificator;
@@ -16,11 +14,8 @@ public class OrderManager {
     }
 
     void cancelOrder(Order order) {
-        if (order.getStatus() == OrderStatus.CANCELLED) {
+        if (order.getStatus() == OrderStatus.CANCELLED)
             notificator.sendCancelNotification(order);
-        } else {
-            notificator.sendCannotCancelNotification(order);
-        }
 
     }
 }
